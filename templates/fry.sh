@@ -1,6 +1,7 @@
 {% extends "base_script.sh" %}
 {% block header %}
 {% set gpus = operations|map(attribute='directives.ngpu')|sum %}
+{% set gpus = operations|map(attribute='directives.ncpu')|sum %}
 #!/bin/bash
 #SBATCH --job-name="{{ id }}"
 {% if partition %}

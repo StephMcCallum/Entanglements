@@ -1,4 +1,6 @@
 workspace/*
 .signac
-.json
+*.json*
+*.swp*
 *.gsd*
+*.out*

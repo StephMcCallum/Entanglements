@@ -175,7 +175,7 @@ def get_ff(job):
 
 @PPSCG.post(system_built)
 @PPSCG.operation(
-    directives={"ngpu": 0, "executable": "python -u"}, name="build"
+    directives={"ngpu": 0, "ncpu": 1, "executable": "python -u"}, name="build"
 )
 def build(job):
     """Run the initial configuration builder on CPU"""
@@ -193,7 +193,7 @@ def build(job):
 @PPSCG.pre(system_built)
 @PPSCG.post(initial_run_done)
 @PPSCG.operation(
-    directives={"ngpu": 1, "executable": "python -u"}, name="run"
+    directives={"ngpu": 1, "ncpu": 1, "executable": "python -u"}, name="run"
 )
 def run(job):
     """Run initial single-chain simulation."""
