@@ -249,7 +249,7 @@ def run(job):
         )
         job.doc.target_box = target_box.value
         shrink_kT_ramp = sim.temperature_ramp(
-                n_steps=job.sp.shrink_n_steps,
+                n_steps=job.sp.n_shrink_steps,
                 kT_start=job.sp.shrink_kT,
                 kT_final=job.sp.kT
         )
