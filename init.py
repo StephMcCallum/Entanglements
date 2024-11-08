@@ -21,40 +21,50 @@ from itertools import product
 def get_parameters():
     ''''''
     parameters = OrderedDict()
-    # Define some system related parameters:
-    parameters["lengths"] = [20,30,50,80,100,150]
-    parameters["chains"] = [50]
-    parameters["density"] = [1.3]
-    parameters["remove_hydrogens"] = [True]
-    parameters["remove_charges"] = [True]
-    parameters["pppm_resolution"] = [(16, 16, 16)]
-    parameters["pppm_order"] = [4]
-    parameters["remove_charges"] = [True]
-    parameters["auto_scale"] = [True]
-    # Define some simulation related parameters:
+    parameters["chains"] = [
+        (50, 20),
+        (50, 30),
+        (50, 50),
+        (50, 75),
+        (50, 100),
+        (50, 150),
+        (50, 200),
+        (50, 300),
+    ]
+    parameters["density"] = [1.32]
+    parameters["harmonic_bonds"] = [True]
     parameters["kT"] = [4.2]
-    parameters["n_steps"] = [5e7]
-    parameters["shrink_kT"] = [8.0]
-    parameters["shrink_n_steps"] = [5e5]
+    parameters["n_equil_steps"] = [5e7]
+    parameters["n_prod_steps"] = [1e8]
+    parameters["shrink_kT"] = [7.0]
+    parameters["n_shrink_steps"] = [5e7]
     parameters["shrink_period"] = [10000]
-    parameters["r_cut"] = [2.5]
-    parameters["dt"] = [0.0003]
-    parameters["tau_kT"] = [100] # Used as a multiple of dt
-    parameters["gsd_write_freq"] = [1e4]
-    parameters["log_write_freq"] = [1e3]
+    parameters["dt"] = [0.005]
+    parameters["tau_kT"] = [100]
+    parameters["gsd_write_freq"] = [1e6]
+    parameters["log_write_freq"] = [1e4]
+    parameters["sim_seed"] = [42]
+    # Get FF from the MSIBI Project
+    parameters["msibi_project"] = [
+        "/home/erjank_project/pps-entanglement-length/Entanglements/angle-flow-with-pairs"
+    ]
+    parameters["msibi_job"] = ["34c9e9f8fa7d942743adbf6835395671"]
     return list(parameters.keys()), list(product(*parameters.values()))
 
 
 def main():
-    project = signac.init_project() # Set the signac project name
+    project = signac.init_project()
     param_names, param_combinations = get_parameters()
-    # Create the generate job
+    # Create workspace of jobs
     for params in param_combinations:
         statepoint = dict(zip(param_names, params))
         job = project.open_job(statepoint)
         job.init()
-        job.doc.setdefault("nvt_done", False)
-        job.doc.setdefault("sample_done", False)
+        job.doc.setdefault("equilibrated", False)
+        job.doc.setdefault("sampled", False)
+        job.doc.setdefault("runs", 0)
+        job.doc.setdefault("num_mols", job.sp.chains[0])
+        job.doc.setdefault("lengths", job.sp.chains[1])
 
 
 if __name__ == "__main__":
