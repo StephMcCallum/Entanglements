@@ -1,0 +1,8 @@
+name: entanglements
+channels:
+  - conda-forge
+dependencies:
+  - flowermd
+  - signac=2.1.0
+  - signac-flow=0.26.1
+  - pip
