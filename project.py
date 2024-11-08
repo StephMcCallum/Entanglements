@@ -271,7 +271,7 @@ def run(job):
 @PPSCG.pre(initial_run_done)
 @PPSCG.post(equilibrated)
 @PPSCG.operation(
-    directives={"ngpu": 1, "executable": "python -u"},
+    directives={"ngpu": 1, "ncpu": 1, "executable": "python -u"},
     name="run-longer"
 )
 def run_longer(job):
@@ -317,7 +317,7 @@ def run_longer(job):
 @PPSCG.pre(equilibrated)
 @PPSCG.post(production_done)
 @PPSCG.operation(
-    directives={"ngpu": 1, "executable": "python -u"},
+    directives={"ngpu": 1, "ncpu": 1, "executable": "python -u"},
     name="production"
 )
 def production_run(job):
@@ -364,7 +364,7 @@ def production_run(job):
 @PPSCG.pre(production_done)
 @PPSCG.post(sampled)
 @PPSCG.operation(
-    directives={"ngpu": 0, "executable": "python -u"},
+    directives={"ngpu": 0, "ncpu": 1, "executable": "python -u"},
     name="sample"
 )
 def sample(job):
