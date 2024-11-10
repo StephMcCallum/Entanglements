@@ -4,3 +4,4 @@ workspace/*
 *.swp*
 *.gsd*
 *.out*
+.ipynb_checkpoints/*
