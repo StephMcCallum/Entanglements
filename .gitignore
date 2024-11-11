@@ -5,3 +5,4 @@ workspace/*
 *.gsd*
 *.out*
 .ipynb_checkpoints/*
+notebooks/.ipynb_checkpoints/*
