@@ -1,0 +1,86 @@
+Using environment configuration: Fry
+Using environment configuration: Fry
+Setting up MSIBI optimizer...
+Creating State objects...
+state:  {'name': 'A', 'remove_hydrogens': True, 'alpha': 0.6, 'n_frames': 100, 'cg_file_name': 'target_1monomer_per_bead.gsd'}
+Creating bond objects...
+Creating angle objects...
+Creating pair objects...
+Running Optimization...
+---Optimization: 1 of 10---
+Starting simulation 0 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43a6f9e550>
+Finished simulation 0 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 0: 0.961285
+
+/home/chrisjones4/cme/forks/msibi/msibi/forces.py:618: RuntimeWarning: invalid value encountered in divide
+  kT * np.log(current_dist[:, 1] / target_dist[:, 1]) / N
+/home/chrisjones4/cme/forks/msibi/msibi/forces.py:618: RuntimeWarning: divide by zero encountered in log
+  kT * np.log(current_dist[:, 1] / target_dist[:, 1]) / N
+---Optimization: 2 of 10---
+Starting simulation 1 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43a6b4b350>
+Finished simulation 1 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 1: 0.969104
+
+/home/chrisjones4/cme/forks/msibi/msibi/forces.py:618: RuntimeWarning: divide by zero encountered in divide
+  kT * np.log(current_dist[:, 1] / target_dist[:, 1]) / N
+---Optimization: 3 of 10---
+Starting simulation 2 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43ac5bd790>
+Finished simulation 2 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 2: 0.959684
+
+---Optimization: 4 of 10---
+Starting simulation 3 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43abee36d0>
+Finished simulation 3 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 3: 0.976883
+
+---Optimization: 5 of 10---
+Starting simulation 4 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43ac4790d0>
+Finished simulation 4 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 4: 0.976103
+
+---Optimization: 6 of 10---
+Starting simulation 5 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43ac447ed0>
+Finished simulation 5 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 5: 0.980974
+
+---Optimization: 7 of 10---
+Starting simulation 6 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43a6292850>
+Finished simulation 6 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 6: 0.964407
+
+---Optimization: 8 of 10---
+Starting simulation 7 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43ac3fad50>
+Finished simulation 7 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 7: 0.972735
+
+---Optimization: 9 of 10---
+Starting simulation 8 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43a56e1b50>
+Finished simulation 8 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 8: 0.965049
+
+---Optimization: 10 of 10---
+Starting simulation 9 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+Running on device <hoomd.device.GPU object at 0x7f43abe4ea50>
+Finished simulation 9 for state <class 'msibi.state.State'>; Name: A; kT: 7.0; Weight: 0.6
+
+Force: A-A-A, State: A, Iteration: 9: 0.977257
+
+Optimization done

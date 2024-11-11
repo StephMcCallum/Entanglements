@@ -1,0 +1,7 @@
+workspace/*
+.signac
+*.json*
+*.swp*
+*.gsd*
+*.out*
+.ipynb_checkpoints/*
